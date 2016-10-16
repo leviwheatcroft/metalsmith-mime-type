@@ -1,0 +1,40 @@
+{
+  "name": "metalsmith-mime-type",
+  "version": "0.0.1",
+  "description": "metalsmith plugin to determine mime type from file contents",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --reporter spec --timeout 5000",
+    "docs": "./node_modules/docker/docker -o ./docs -x .README.md,README.md,test,node_modules,notes,docs,.git",
+    "readme": "node ./node_modules/.bin/node-readme"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leviwheatcroft/metalsmith-mime-type.git"
+  },
+  "keywords": [
+    "metalsmith",
+    "plugin",
+    "mime",
+    "type"
+  ],
+  "author": "Levi Wheatcroft <levi@wheatcrofts.com.au> (http://leviwheatcroft.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leviwheatcroft/metalsmith-move/issues"
+  },
+  "homepage": "https://github.com/leviwheatcroft/metalsmith-move#readme",
+  "dependencies": {
+    "async": "^2.1.1",
+    "lodash": "^4.16.4",
+    "metalsmith": "^2.2.0",
+    "mmmagic": "^0.4.5",
+    "multimatch": "^2.1.0"
+  },
+  "devDependencies": {
+    "docker": "^1.0.0",
+    "mocha": "^3.1.2",
+    "mocha-jshint": "^2.3.1",
+    "node-readme": "^0.1.9"
+  }
+}
