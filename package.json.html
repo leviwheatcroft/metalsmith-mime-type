@@ -52,7 +52,7 @@
   <span class="hljs-attr">"description"</span>: <span class="hljs-string">"metalsmith plugin to determine mime type from file contents"</span>,
   <span class="hljs-attr">"main"</span>: <span class="hljs-string">"dist/index.js"</span>,
   <span class="hljs-attr">"scripts"</span>: {
-    <span class="hljs-attr">"docs"</span>: <span class="hljs-string">"docker -o ./docs -x .README.md,README.md,test,node_modules,notes,docs,.git"</span>,
+    <span class="hljs-attr">"docs"</span>: <span class="hljs-string">"docker -o ./docs -I -x dist,.README.md,test/fixtures,node_modules"</span>,
     <span class="hljs-attr">"readme"</span>: <span class="hljs-string">"node-readme"</span>,
     <span class="hljs-attr">"build"</span>: <span class="hljs-string">"npm run build:node6"</span>,
     <span class="hljs-attr">"gh-pages"</span>: <span class="hljs-string">"gh-pages -d docs"</span>,
