@@ -1,1 +1,1 @@
-var tree={"files":["README.md","package.json"],"dirs":{"docs":{"files":["README.md.html","doc-filelist.js","doc-script.js","doc-style.css","package.json.html"],"dirs":{"dist":{"files":["index.js.html"],"dirs":{"node4":{"files":["index.js.html"]},"node5":{"files":["index.js.html"]}}},"lib":{"files":["index.js.html"]}}},"lib":{"files":["index.js"]},"test":{"files":["index.js"]}}};
+var tree={"files":["README.md","package.json"],"dirs":{"lib":{"files":["index.js"]},"test":{"files":["index.js"]}}};

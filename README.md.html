@@ -70,7 +70,11 @@ metalsmith-mime-type
 <p><img src="https://img.shields.io/github/stars/leviwheatcroft/metalsmith-mime-type.svg" alt="stars"></p>
 <p><img src="https://img.shields.io/github/forks/leviwheatcroft/metalsmith-mime-type.svg" alt="forks"></p>
 <p><a href="metalsmith.io.html">metalsmith</a> plugin to detect mime types from file contents</p>
-<p>take a look at the <a href="https://leviwheatcroft.github.io/metalsmith-mime-type/lib/index.js.html">annotated source</a></p>
+<p>This plugin is a thin wrapper around
+<a href="https://www.npmjs.com/package/mmmagic">mmmagic</a> which inspects the contents of
+files to determine mime type rather than simply looking up the file extension</p>
+<p>Take a look at the
+<a href="https://leviwheatcroft.github.io/metalsmith-mime-type/lib/index.js.html">annotated source</a></p>
 <div class="pilwrap" id="install">
   <h2>
     <a href="#install" name="install" class="pilcrow"></a>
@@ -87,7 +91,7 @@ usage
 <pre><code>mimeType = require('metalsmith-mime-type')
 
 metalsmith(__dirname)
-.use(mimeType('**/*'))
+.use(mimeType(['**/*','!*.jpg']))
 .build(callback)
 </code></pre>
 <div class="pilwrap" id="options">
