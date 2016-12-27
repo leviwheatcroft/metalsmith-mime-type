@@ -6,12 +6,9 @@
   <link rel="stylesheet" media="all" href="doc-style.css" />
   <script src="doc-filelist.js"></script>
   <script>
-    var relativeDir = "";
-    var thisFile = "README.md";
-    var defaultSidebar = true;
+    var relativeDir = "", thisFile = "README.md", defaultSidebar = true;
   </script>
   <script src="doc-script.js"></script>
-
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -21,120 +18,147 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
-
       <div class="heading h1">
         <a href="#metalsmith-mime-type">metalsmith-mime-type</a>
       </div>
-
       <div class="heading h2">
         <a href="#install">install</a>
       </div>
-
       <div class="heading h2">
         <a href="#usage">usage</a>
       </div>
-
       <div class="heading h2">
         <a href="#options">options</a>
       </div>
-
       <div class="heading h2">
-        <a href="#node-4-lts">node 4 LTS</a>
+        <a href="#node%204%20lts">node 4 LTS</a>
       </div>
-
       <div class="heading h2">
         <a href="#author">Author</a>
       </div>
-
       <div class="heading h2">
         <a href="#contributing">Contributing</a>
       </div>
-
       <div class="heading h2">
         <a href="#license">License</a>
       </div>
-
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container">
-    <div class="docs markdown"><div class="pilwrap" id="metalsmith-mime-type">
+  <div id="container"><div class="docs markdown">
+<div class="pilwrap" id="metalsmith-mime-type">
   <h1>
-    <a href="#metalsmith-mime-type" name="metalsmith-mime-type" class="pilcrow"></a>
-metalsmith-mime-type
+    <a href="#metalsmith-mime-type" name="metalsmith-mime-type" class="pilcrow">&#182;</a>
+    metalsmith-mime-type
   </h1>
 </div>
-<p><img src="https://nodei.co/npm/metalsmith-mime-type.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="nodei.co"></p>
-<p><img src="https://img.shields.io/npm/v/metalsmith-mime-type.svg" alt="npm"></p>
-<p><img src="https://img.shields.io/github/issues/leviwheatcroft/metalsmith-mime-type.svg" alt="github-issues"></p>
-<p><img src="https://img.shields.io/github/stars/leviwheatcroft/metalsmith-mime-type.svg" alt="stars"></p>
-<p><img src="https://img.shields.io/github/forks/leviwheatcroft/metalsmith-mime-type.svg" alt="forks"></p>
-<p><a href="metalsmith.io.html">metalsmith</a> plugin to detect mime types from file contents</p>
+
+
+<p><img src="https://nodei.co/npm/metalsmith-mime-type.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="nodei.co" title="" /></p>
+
+<p><img src="https://img.shields.io/npm/v/metalsmith-mime-type.svg" alt="npm" title="" /></p>
+
+<p><img src="https://img.shields.io/github/issues/leviwheatcroft/metalsmith-mime-type.svg" alt="github-issues" title="" /></p>
+
+<p><img src="https://img.shields.io/github/stars/leviwheatcroft/metalsmith-mime-type.svg" alt="stars" title="" /></p>
+
+<p><img src="https://img.shields.io/github/forks/leviwheatcroft/metalsmith-mime-type.svg" alt="forks" title="" /></p>
+
+<p><a href="metalsmith.io">metalsmith</a> plugin to detect mime types from file contents</p>
+
 <p>This plugin is a thin wrapper around
 <a href="https://www.npmjs.com/package/mmmagic">mmmagic</a> which inspects the contents of
 files to determine mime type rather than simply looking up the file extension</p>
+
 <p>Take a look at the
 <a href="https://leviwheatcroft.github.io/metalsmith-mime-type/lib/index.js.html">annotated source</a></p>
+
+
 <div class="pilwrap" id="install">
   <h2>
-    <a href="#install" name="install" class="pilcrow"></a>
-install
+    <a href="#install" name="install" class="pilcrow">&#182;</a>
+    install
   </h2>
 </div>
+
+
 <p><code>npm i --save metalsmith-mime-type</code></p>
+
+
 <div class="pilwrap" id="usage">
   <h2>
-    <a href="#usage" name="usage" class="pilcrow"></a>
-usage
+    <a href="#usage" name="usage" class="pilcrow">&#182;</a>
+    usage
   </h2>
 </div>
-<pre><code>mimeType = require('metalsmith-mime-type')
+
+
+<div class='highlight'><pre><code language=''>mimeType = require('metalsmith-mime-type')
 
 metalsmith(__dirname)
 .use(mimeType(['**/*','!*.jpg']))
 .build(callback)
-</code></pre>
+</code></pre></div>
+
+
 <div class="pilwrap" id="options">
   <h2>
-    <a href="#options" name="options" class="pilcrow"></a>
-options
+    <a href="#options" name="options" class="pilcrow">&#182;</a>
+    options
   </h2>
 </div>
+
+
 <p>A single option, <code>src</code> is used as a minimatch mask to determine what files
 need to to have mimetypes assigned. can be passed in as an object property,
 or as a string. See usage example.</p>
-<div class="pilwrap" id="node-4-lts">
+
+
+<div class="pilwrap" id="node%204%20lts">
   <h2>
-    <a href="#node-4-lts" name="node-4-lts" class="pilcrow"></a>
-node 4 LTS
+    <a href="#node%204%20lts" name="node%204%20lts" class="pilcrow">&#182;</a>
+    node 4 LTS
   </h2>
 </div>
+
+
 <p><code>var mimeType = require('metalsmith-mime-type/dist/node4')</code></p>
+
+
 <div class="pilwrap" id="author">
   <h2>
-    <a href="#author" name="author" class="pilcrow"></a>
-Author
+    <a href="#author" name="author" class="pilcrow">&#182;</a>
+    Author
   </h2>
 </div>
-<p>Levi Wheatcroft <a href="mailto:levi@wht.cr.html">levi@wht.cr</a></p>
+
+
+<p>Levi Wheatcroft <a href="&#x6D;&#x61;&#x69;l&#116;&#x6F;:&#x6C;&#x65;&#x76;&#105;&#64;&#x77;&#x68;t&#46;&#x63;&#x72;">&#x6C;&#x65;&#x76;&#105;&#64;&#x77;&#x68;t&#46;&#x63;&#x72;</a></p>
+
+
 <div class="pilwrap" id="contributing">
   <h2>
-    <a href="#contributing" name="contributing" class="pilcrow"></a>
-Contributing
+    <a href="#contributing" name="contributing" class="pilcrow">&#182;</a>
+    Contributing
   </h2>
 </div>
+
+
 <p>Contributions welcome; Please submit all pull requests against the master
 branch.</p>
+
+
 <div class="pilwrap" id="license">
   <h2>
-    <a href="#license" name="license" class="pilcrow"></a>
-License
+    <a href="#license" name="license" class="pilcrow">&#182;</a>
+    License
   </h2>
 </div>
+
+
 <ul>
-<li><strong>MIT</strong> : http://opensource.org/licenses/MIT</li>
-</ul>
-</div>
+<li><strong>MIT</strong> : <a href='http://opensource.org/licenses/MIT'>http://opensource.org/licenses/MIT</a></li>
+</ul></div>
   </div>
 </body>
 </html>

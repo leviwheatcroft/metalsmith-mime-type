@@ -6,12 +6,9 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../";
-    var thisFile = "lib/index.js";
-    var defaultSidebar = true;
+    var relativeDir = "../", thisFile = "lib/index.js", defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
-
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -21,106 +18,96 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
-
       <div class="heading h2">
-        <a href="#default-fn">default fn</a>
+        <a href="#default%20fn">default fn</a>
       </div>
-
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container">
-    <div class="background highlight"></div>
+  <div id="container"><div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
-    
       <tr>
         <td class="docs">
           <h1>index.js</h1>
         </td>
         <td class="code highlight"></td>
       </tr>
-    
-    
       <tr>
         <td class="docs">
-          <div class="pilwrap">
-  <a class="pilcrow" href="#section-1" id="section-1"></a>
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1">&#182;</a>
 </div>
 
         </td>
-        <td class="code highlight">
-          <pre class="javascript"><span class="hljs-keyword">import</span> {
-  isString,
-  keys
-} <span class="hljs-keyword">from</span> <span class="hljs-string">'lodash'</span>
-<span class="hljs-keyword">import</span> multimatch <span class="hljs-keyword">from</span> <span class="hljs-string">'multimatch'</span>
-<span class="hljs-keyword">import</span> mmm <span class="hljs-keyword">from</span> <span class="hljs-string">'mmmagic'</span>
-<span class="hljs-keyword">import</span> debug <span class="hljs-keyword">from</span> <span class="hljs-string">'debug'</span>
+        <td class="code highlight"><div class="highlight"><pre><span class="kr">import</span> <span class="p">{</span>
+  <span class="nx">isString</span><span class="p">,</span>
+  <span class="nx">keys</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;lodash&#39;</span>
+<span class="kr">import</span> <span class="nx">multimatch</span> <span class="nx">from</span> <span class="s1">&#39;multimatch&#39;</span>
+<span class="kr">import</span> <span class="nx">mmm</span> <span class="nx">from</span> <span class="s1">&#39;mmmagic&#39;</span>
+<span class="kr">import</span> <span class="nx">debug</span> <span class="nx">from</span> <span class="s1">&#39;debug&#39;</span>
 
-<span class="hljs-keyword">const</span> magic = <span class="hljs-keyword">new</span> mmm.Magic(mmm.MAGIC_MIME_TYPE)
-<span class="hljs-keyword">const</span> dbg = debug(<span class="hljs-string">'metalsmith-mime-type'</span>)
+<span class="kr">const</span> <span class="nx">magic</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mmm</span><span class="p">.</span><span class="nx">Magic</span><span class="p">(</span><span class="nx">mmm</span><span class="p">.</span><span class="nx">MAGIC_MIME_TYPE</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">dbg</span> <span class="o">=</span> <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;metalsmith-mime-type&#39;</span><span class="p">)</span>
 
-</pre>
+
+</pre></div>
         </td>
       </tr>
-    
       <tr>
-        <td class="docs">
-          <div class="dox">
-<div class="summary">
-<div class="pilwrap" id="default-fn">
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="default%20fn">
   <h2>
-    <a href="#default-fn" name="default-fn" class="pilcrow"></a>
-default fn
+    <a href="#default%20fn" name="default%20fn" class="pilcrow">&#182;</a>
+    default fn
   </h2>
 </div>
+
+
 <p>this fn is exported as the module, designed to be called by <code>metalsmith#use</code></p>
-</div>
-<div class="body">
-<pre><code>.use(move(['*', '!*.jpg'])
-</code></pre>
-</div>
-<div class="details">
-<div class="dox_tag_title">Params</div>
-<div class="dox_tag_detail">
-<span class="dox_tag_name">pattern</span>
-<span class="dox_type">String</span>
-<span class="dox_type">Array</span>
-<span><ul>
+  </div>
+  <div class="body"><div class='highlight'><pre><code language=''>.use(move(['*', '!*.jpg'])
+</code></pre></div>
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">Params</div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name">pattern</span>
+      <span class="dox_type">String</span>
+      <span class="dox_type">Array</span>
+      <span><ul>
 <li>one or more multimatch patterns</li>
-</ul>
-</span>
+</ul></span>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-
         </td>
-        <td class="code highlight">
-          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">pattern</span>) </span>{
-  <span class="hljs-keyword">if</span> (isString(pattern)) pattern = [ pattern ]
-  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">files, metalsmith, done</span>) =&gt;</span> {
-    <span class="hljs-keyword">const</span> matches = multimatch(keys(files), pattern)
-    <span class="hljs-keyword">const</span> iterator = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-      <span class="hljs-keyword">const</span> meta = files[matches.shift()]
-      magic.detect(meta.contents, (err, mimeType) =&gt; {
-        <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">throw</span> err
-        meta.mimeType = mimeType
-        <span class="hljs-keyword">if</span> (matches.length) process.nextTick(iterator)
-        <span class="hljs-keyword">else</span> done()
-      })
-    }
-    iterator()
-  }
-}
-
-</pre>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pattern</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isString</span><span class="p">(</span><span class="nx">pattern</span><span class="p">))</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="p">[</span> <span class="nx">pattern</span> <span class="p">]</span>
+  <span class="k">return</span> <span class="p">(</span><span class="nx">files</span><span class="p">,</span> <span class="nx">metalsmith</span><span class="p">,</span> <span class="nx">done</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">matches</span> <span class="o">=</span> <span class="nx">multimatch</span><span class="p">(</span><span class="nx">keys</span><span class="p">(</span><span class="nx">files</span><span class="p">),</span> <span class="nx">pattern</span><span class="p">)</span>
+    <span class="kr">const</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">src</span> <span class="o">=</span> <span class="nx">matches</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span>
+      <span class="kr">const</span> <span class="nx">meta</span> <span class="o">=</span> <span class="nx">files</span><span class="p">[</span><span class="nx">src</span><span class="p">]</span>
+      <span class="nx">magic</span><span class="p">.</span><span class="nx">detect</span><span class="p">(</span><span class="nx">meta</span><span class="p">.</span><span class="nx">contents</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">mimeType</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span>
+        <span class="nx">meta</span><span class="p">.</span><span class="nx">mimeType</span> <span class="o">=</span> <span class="nx">mimeType</span>
+        <span class="nx">dbg</span><span class="p">(</span><span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">src</span><span class="p">}</span> <span class="o">&gt;</span> <span class="nx">$</span><span class="p">{</span><span class="nx">mimeType</span><span class="p">}</span><span class="err">`</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">matches</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="nx">process</span><span class="p">.</span><span class="nx">nextTick</span><span class="p">(</span><span class="nx">iterator</span><span class="p">)</span>
+        <span class="k">else</span> <span class="nx">done</span><span class="p">()</span>
+      <span class="p">})</span>
+    <span class="p">}</span>
+    <span class="nx">iterator</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
         </td>
       </tr>
-    
   </tbody>
 </table>
-
   </div>
 </body>
 </html>
