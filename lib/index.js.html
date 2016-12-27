@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>index.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "lib/index.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h2">
+        <a href="#default-fn">default fn</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>index.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> {
+  isString,
+  keys
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'lodash'</span>
+<span class="hljs-keyword">import</span> multimatch <span class="hljs-keyword">from</span> <span class="hljs-string">'multimatch'</span>
+<span class="hljs-keyword">import</span> mmm <span class="hljs-keyword">from</span> <span class="hljs-string">'mmmagic'</span>
+<span class="hljs-keyword">import</span> debug <span class="hljs-keyword">from</span> <span class="hljs-string">'debug'</span>
+
+<span class="hljs-keyword">const</span> magic = <span class="hljs-keyword">new</span> mmm.Magic(mmm.MAGIC_MIME_TYPE)
+<span class="hljs-keyword">const</span> dbg = debug(<span class="hljs-string">'metalsmith-mime-type'</span>)
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="default-fn">
+  <h2>
+    <a href="#default-fn" name="default-fn" class="pilcrow"></a>
+default fn
+  </h2>
+</div>
+<p>this fn is exported as the module, designed to be called by <code>metalsmith#use</code></p>
+</div>
+<div class="body">
+<pre><code>.use(move('*.html')
+</code></pre>
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">pattern</span>
+<span class="dox_type">String</span>
+<span class="dox_type">Array</span>
+<span><ul>
+<li>one or more multimatch patterns</li>
+</ul>
+</span>
+</div>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">pattern</span>) </span>{
+  <span class="hljs-keyword">if</span> (isString(pattern)) pattern = [ pattern ]
+  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">files, metalsmith, done</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> matches = multimatch(keys(files), pattern)
+    <span class="hljs-keyword">const</span> iterator = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      <span class="hljs-keyword">const</span> meta = files[matches.shift()]
+      magic.detect(meta.contents, (err, mimeType) =&gt; {
+        <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">throw</span> err
+        meta.mimeType = mimeType
+        <span class="hljs-keyword">if</span> (matches.length) process.nextTick(iterator)
+        <span class="hljs-keyword">else</span> done()
+      })
+    }
+    iterator()
+  }
+}
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>
