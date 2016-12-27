@@ -1,14 +1,14 @@
-# ${pkg.name}
+# metalsmith-mime-type
 
-${badge('nodei')}
+![nodei.co](https://nodei.co/npm/metalsmith-mime-type.png?downloads=true&downloadRank=true&stars=true)
 
-${badge('npm')}
+![npm](https://img.shields.io/npm/v/metalsmith-mime-type.svg)
 
-${badge('github-issues')}
+![github-issues](https://img.shields.io/github/issues/leviwheatcroft/metalsmith-mime-type.svg)
 
-${badge('github-stars')}
+![stars](https://img.shields.io/github/stars/leviwheatcroft/metalsmith-mime-type.svg)
 
-${badge('github-forks')}
+![forks](https://img.shields.io/github/forks/leviwheatcroft/metalsmith-mime-type.svg)
 
 [metalsmith](metalsmith.io) plugin to detect mime types from file contents
 

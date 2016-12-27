@@ -1,12 +1,9 @@
-let Metalsmith    = require('metalsmith')
-let assert        = require('assert')
-let mimeType      = require('../lib')
-require('mocha-jshint')({
-  paths: [
-    'lib/index.js'
-  ]
-})
+import Metalsmith from 'metalsmith'
+import assert from 'assert'
+import mimeType from '../lib'
+import lint from 'mocha-eslint'
 
+lint(['lib/index.js'])
 
 describe('metalsmith-mime-type', () => {
   it('should be able to detect mime types', (done) => {
@@ -20,5 +17,3 @@ describe('metalsmith-mime-type', () => {
     })
   })
 })
-
-
