@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-mime-type",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "metalsmith plugin to determine mime type from file contents",
   "main": "dist/index.js",
   "scripts": {
