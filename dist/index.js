@@ -1,25 +1,13 @@
-import { isString, keys } from 'lodash';
-import multimatch from 'multimatch';
-import mmm from 'mmmagic';
-import debug from 'debug';
+'use strict';
 
-const magic = new mmm.Magic(mmm.MAGIC_MIME_TYPE);
-const dbg = debug('metalsmith-mime-type');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/**
- * ## default fn
- * this fn is exported as the module, designed to be called by `metalsmith#use`
- *
- * ```
- * .use(move(['*', '!*.jpg'])
- * ```
- *
- * @param {String|Array} pattern - one or more multimatch patterns
- */
-export default function (pattern) {
-  if (isString(pattern)) pattern = [pattern];
+exports.default = function (pattern) {
+  if ((0, _lodash.isString)(pattern)) pattern = [pattern];
   return (files, metalsmith, done) => {
-    const matches = multimatch(keys(files), pattern);
+    const matches = (0, _multimatch2.default)((0, _lodash.keys)(files), pattern);
     const iterator = () => {
       const src = matches.shift();
       const meta = files[src];
@@ -32,5 +20,34 @@ export default function (pattern) {
     };
     iterator();
   };
-}
-module.exports = exports['default'];
+};
+
+var _lodash = require('lodash');
+
+var _multimatch = require('multimatch');
+
+var _multimatch2 = _interopRequireDefault(_multimatch);
+
+var _mmmagic = require('mmmagic');
+
+var _mmmagic2 = _interopRequireDefault(_mmmagic);
+
+var _debug = require('debug');
+
+var _debug2 = _interopRequireDefault(_debug);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const magic = new _mmmagic2.default.Magic(_mmmagic2.default.MAGIC_MIME_TYPE);
+const dbg = (0, _debug2.default)('metalsmith-mime-type');
+
+/**
+ * ## default fn
+ * this fn is exported as the module, designed to be called by `metalsmith#use`
+ *
+ * ```
+ * .use(move(['*', '!*.jpg'])
+ * ```
+ *
+ * @param {String|Array} pattern - one or more multimatch patterns
+ */
