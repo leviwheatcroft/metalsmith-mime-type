@@ -19,6 +19,8 @@ files to determine mime type rather than simply looking up the file extension
 Take a look at the
 [annotated source](https://leviwheatcroft.github.io/metalsmith-mime-type/lib/index.js.html)
 
+
+
 ## install
 
 `npm i --save metalsmith-mime-type`
@@ -39,8 +41,11 @@ A single option, `src` is used as a minimatch mask to determine what files
 need to to have mimetypes assigned. can be passed in as an object property,
 or as a string. See usage example.
 
-## node 4 LTS
+## compatibility
 
+`dist/index.js` is fully compatible with Node 6.3.1
+
+`dist/node4/index.js` is fully compatible with Node 4 LTS, require it like so:
 `var mimeType = require('metalsmith-mime-type/dist/node4')`
 
 ## Author
