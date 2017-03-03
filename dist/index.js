@@ -11,12 +11,24 @@ exports.default = function (pattern) {
     const iterator = () => {
       const src = matches.shift();
       const meta = files[src];
-      magic.detect(meta.contents, (err, mimeType) => {
-        if (err) throw err;
-        meta.mimeType = mimeType;
-        dbg(`${ src } > ${ mimeType }`);
+      let contents = meta.contents;
+      if (typeof contents === 'string') {
+        contents = new Buffer(contents);
+      }
+      if (contents instanceof Buffer) {
+        magic.detect(contents, (err, mimeType) => {
+          if (err) throw err;
+          meta.mimeType = mimeType;
+          dbg(`${ src } > ${ mimeType }`);
+          if (matches.length) process.nextTick(iterator);else {
+            done();
+          }
+        });
+      } else {
+        // dbg(meta)
+        dbg(`${ src } > no buffer`);
         if (matches.length) process.nextTick(iterator);else done();
-      });
+      }
     };
     iterator();
   };
